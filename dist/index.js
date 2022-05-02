@@ -19,7 +19,7 @@ function fn_words() {
         .join('');
     const rl = readline.createInterface({ input, output });
     rl.question(chalk.yellow(`Scrambled Word: ${chalk.green(letters)}.\nYour Guess: `), (answer) => {
-        if (answer === randomWord)
+        if (answer.toLowerCase() === randomWord.toLowerCase())
             console.log(chalk.green('Yay! You won!'));
         else
             console.log(chalk.red(`Oops! Wrong Guess! Better luck next time. The correct answer was ${chalk.green(`"${randomWord}"`)}`));
@@ -34,7 +34,7 @@ function fn_sentences() {
         .split(' ');
     const rl = readline.createInterface({ input, output });
     rl.question(chalk.yellow(`Scrambled Sentence: ${chalk.green(wordss.join(' '))}.\nYour Guess: `), (answer) => {
-        if (answer === randomSentence)
+        if (answer.toLowerCase() === randomSentence.toLowerCase())
             console.log(chalk.green('Yay! You won!'));
         else
             console.log(chalk.red(`Wrong Guess! Try again. The correct answer was ${chalk.green(`"${randomSentence}"`)}`));
